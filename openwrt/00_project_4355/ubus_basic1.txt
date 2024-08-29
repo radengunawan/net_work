@@ -62,3 +62,122 @@ services that need to communicate.
 This centralized communication reduces complexity and 
 makes it easier to scale the system as more 
 services are added.
+
+
+
+Basic example of how to use `ubus` in OpenWrt 
+to interact with a service.
+
+### Scenario
+
+Let's say you want to interact with the network service on your OpenWrt 
+device to get the status of a specific network interface, 
+such as `eth0`.
+
+### Steps to Use `ubus`
+
+1. List Available Services
+
+   First, you can list all the available services registered 
+   with `ubus` (bash):
+   
+   ubus list
+   
+   This command will display a list of all services that you can interact 
+   with through `ubus`. 
+   For example, you might see services like 
+   `network.interface`, 
+   `system`, 
+   etc.
+
+2. Get Information About a Specific Service
+
+   To see the available methods and information about 
+   a specific service, such as `network.interface`, you can run:
+
+   ubus -v list network.interface
+
+   This will give you detailed information about the methods you 
+   can call and the parameters required.
+
+3. Call a Method to Get Interface Status
+
+   Now, let's say you want to get the status of 
+   the `eth0` interface. 
+   You can do this using the `status` method on 
+   the `network.interface` service:
+
+      ubus call network.interface status '{"interface":"eth0"}'
+   
+   This command will return a JSON object with the status 
+   of the `eth0` interface, showing details such as whether 
+   it's up, its IP address, and other relevant information.
+
+### Example Output
+
+If you run the command:
+
+ubus call network.interface status '{"interface":"eth0"}'
+
+
+You might get an output like this:
+
+```json
+{
+    "up": true,
+    "pending": false,
+    "available": true,
+    "autostart": true,
+    "dynamic": false,
+    "uptime": 3600,
+    "l3_device": "eth0",
+    "proto": "static",
+    "device": "eth0",
+    "updated": [
+        "addresses"
+    ],
+    "metric": 0,
+    "dns_metric": 0,
+    "delegation": true,
+    "ipv4-address": [
+        {
+            "address": "192.168.1.1",
+            "mask": 24
+        }
+    ],
+    "ipv6-address": [],
+    "ipv6-prefix": [],
+    "ipv6-prefix-assignment": [],
+    "route": [],
+    "dns-server": [],
+    "dns-search": [],
+    "neighbors": [],
+    "inactive": false,
+    "data": {
+    }
+}
+```
+
+### Explanation
+
+- `ubus call network.interface status`: 
+ This is calling the `status` method on 
+ the `network.interface` service.
+ 
+- `{"interface":"eth0"}`: This is the JSON input, 
+specifying that you want the status of the `eth0` interface.
+
+- The output provides detailed information about 
+the `eth0` interface, 
+such as its IP address, whether it's up, and other 
+configuration details.
+
+### Summary
+Using `ubus`, you can interact with various services on 
+OpenWrt in a standardized way. 
+This example shows how you can retrieve the status of 
+a network interface using simple commands. 
+You can use similar methods to interact with other services and 
+perform actions like configuring settings, 
+fetching system information, 
+or even restarting services.
