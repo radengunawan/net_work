@@ -1,0 +1,64 @@
+### What is ubus in OpenWrt?
+
+**ubus** (Micro Bus) is a messaging system used in OpenWrt 
+to facilitate communication between different services, 
+processes, or components running on the system. 
+It acts as a central hub that allows these entities to 
+communicate with each other in a standardized way.
+
+### Analogy
+
+Imagine ubus as the central post office in a city. 
+In this city, each service or process 
+(like network management, firewall settings, etc.)
+ is like a different business or individual. 
+
+- Without ubus: 
+If these businesses need to exchange information, 
+they would have to communicate directly, 
+each creating its own communication channel, 
+which could become complicated and inefficient.
+  
+- With ubus: Instead of direct communication, 
+every business sends its message 
+(e.g., requests, commands) to the post office (ubus). 
+The post office then delivers the message to the intended recipient, 
+making communication easier, more organized, and scalable.
+
+### Example
+
+Suppose you have three services running on OpenWrt: 
+Service A(a network manager), 
+Service B (a firewall), and 
+Service C (a system logger).
+
+- Scenario without ubus: 
+  - Service A needs to communicate with 
+  Service B and Service C. 
+  - Service B also needs to communicate with Service C.
+  - Each service would need to establish direct 
+  communication channels, so you'd have 3 separate 
+  communication pathways.
+  
+- Scenario with ubus: 
+  - Service A sends a message to "ubus" requesting an action 
+  from Service B.
+  - ubus receives the message and delivers it to Service B**.
+  - If **Service C** needs to log the action, **ubus** 
+  can notify **Service C** without requiring **Service A** 
+  to directly contact **Service C**.
+  
+By using ubus, the communication is reduced to a central 
+hub that handles all messaging. 
+This simplifies the system architecture and reduces the 
+complexity of inter-process communication.
+
+Quantitative Impact:  
+- Without ubus: You might need 3 direct connections.
+- With ubus: You only need 2 connections 
+(each service to ubus), regardless of the number of 
+services that need to communicate.
+
+This centralized communication reduces complexity and 
+makes it easier to scale the system as more 
+services are added.
