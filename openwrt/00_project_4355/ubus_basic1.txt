@@ -181,3 +181,86 @@ You can use similar methods to interact with other services and
 perform actions like configuring settings, 
 fetching system information, 
 or even restarting services.
+
+
+Problem Example:
+### Problem Description
+
+You are managing a router running OpenWrt with three network interfaces: 
+`eth0`, `eth1`, and `wlan0`. 
+You want to calculate the **total uptime** 
+of these interfaces using `ubus`. 
+Each interface has been up for different periods. 
+Using `ubus`, you will retrieve the uptime for each interface and 
+then sum them up to get the total uptime in 
+seconds.
+
+### Quantitative Example
+
+- `eth0` uptime: 3600 seconds (1 hour)
+- `eth1` uptime: 7200 seconds (2 hours)
+- `wlan0` uptime: 5400 seconds (1.5 hours)
+
+The task is to calculate the total uptime of these interfaces.
+
+### Solution
+
+1. **Use `ubus` to Get Uptime Data for Each Interface**:
+
+   - Use `ubus` to call the `status` method on each interface (similar to what was shown in previous examples):
+
+     ```bash
+     ubus call network.interface status '{"interface":"eth0"}'
+     ubus call network.interface status '{"interface":"eth1"}'
+     ubus call network.interface status '{"interface":"wlan0"}'
+     ```
+
+   Each command returns a JSON object with the interface's status, including its uptime in seconds.
+
+2. **Extract Uptime Data**:
+
+   Let's assume the responses look like this:
+
+   - **eth0**:
+     ```json
+     {
+         "uptime": 3600
+     }
+     ```
+
+   - **eth1**:
+     ```json
+     {
+         "uptime": 7200
+     }
+     ```
+
+   - **wlan0**:
+     ```json
+     {
+         "uptime": 5400
+     }
+     ```
+
+3. **Calculate the Total Uptime**:
+
+   To find the total uptime of all interfaces, sum the uptime
+   values of each interface:
+   
+   Total Uptime = 3600 seconds + 7200 seconds + 5400 seconds
+   Total Uptime = 16200 seconds
+
+
+4. **Convert to Hours (Optional)**:
+
+   If you want to express the total uptime in hours:
+
+   \[
+   \text{Total Uptime in Hours} = \frac{16200 \, \text{seconds}}{3600 \, \text{seconds/hour}} = 4.5 \, \text{hours}
+   \]
+
+### Final Answer
+
+The total uptime of the three network interfaces (`eth0`, `eth1`, and `wlan0`) 
+is **16,200 seconds** or **4.5 hours**.
+
