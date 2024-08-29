@@ -264,3 +264,102 @@ The task is to calculate the total uptime of these interfaces.
 The total uptime of the three network interfaces (`eth0`, `eth1`, and `wlan0`) 
 is **16,200 seconds** or **4.5 hours**.
 
+
+###Ubus Example - programmatic:
+Basic example of using `ubus` programmatically in a Lua script. 
+Lua is commonly used in OpenWrt for scripting, so 
+this example will demonstrate how you can interact with `ubus` from 
+within a Lua script to retrieve the status of a network interface.
+
+### Prerequisites
+
+Ensure that you have `libubus-lua` installed on your OpenWrt device. 
+This package allows you to interact with `ubus` using Lua.
+
+### Lua Script Example
+
+```lua
+-- Load the ubus library
+local ubus = require("ubus")
+
+-- Connect to ubus
+local conn = ubus.connect()
+if not conn then
+    error("Failed to connect to ubus")
+end
+
+-- Define the interface you want to query
+local interface_name = "eth0"
+
+-- Call the ubus method to get the status of the interface
+local status = conn:call("network.interface", "status", { interface = interface_name })
+
+-- Check if the status was successfully retrieved
+if status then
+    print("Interface:", interface_name)
+    print("Status:", status.up and "UP" or "DOWN")
+    print("IP Address:", status["ipv4-address"] and status["ipv4-address"][1]["address"] or "N/A")
+    print("Uptime:", status.uptime and status.uptime .. " seconds" or "N/A")
+else
+    print("Failed to retrieve status for interface:", interface_name)
+end
+
+-- Disconnect from ubus
+conn:close()
+```
+
+### Explanation
+
+1. **Load the `ubus` library**:  
+   The script begins by loading the `ubus` library using 
+   `require("ubus")`.
+
+2. **Connect to `ubus`**:  
+   The script establishes a connection to `ubus` using 
+   `ubus.connect()`. If the connection fails, 
+   the script throws an error.
+
+3. **Define the network interface**:  
+   The script specifies the network interface 
+   (`eth0` in this case) whose status you want to query.
+
+4. **Call the `ubus` method**:  
+   The `conn:call` function is used to call the `status` 
+   method on the `network.interface` service. 
+   The interface name is passed as a parameter in the form of a Lua table.
+
+5. **Process the response**:  
+   The script checks if the status was 
+   successfully retrieved. 
+   If so, it prints out details such as whether the interface is up, 
+   its IP address, and its uptime. If the call fails, it prints an 
+   error message.
+
+6. **Disconnect from `ubus`**:  
+   Finally, the script closes the connection to `ubus`.
+
+### Running the Script
+
+You can save this script to a file, for example, 
+`check_interface.lua`, and run it on your OpenWrt device using Lua:
+
+```bash
+lua /path/to/check_interface.lua
+```
+
+### Example Output
+
+If the interface `eth0` is up, you might see output like:
+
+```
+Interface: eth0
+Status: UP
+IP Address: 192.168.1.1
+Uptime: 3600 seconds
+```
+
+This simple script shows how you can programmatically interact with `ubus` to retrieve information and control services on OpenWrt using Lua. You can expand on this script to perform more complex operations, such as configuring interfaces, monitoring network statistics, or managing other system services.
+
+
+
+
