@@ -1,0 +1,93 @@
+
+### Definition of "Access Technology"
+
+In computer networking, access technology refers to the various 
+methods and technologies used to connect end-user devices 
+(like computers, smartphones, or routers) to a broader network, such as 
+the internet or a corporate network. 
+This connection acts as the "last mile" or the final segment that links 
+the user to the network infrastructure, such as a telecom provider's 
+network.
+
+Analogy
+
+Imagine a vast highway system that connects different cities 
+(representing the broader internet or a corporate network). 
+**Access technology** is like the different types of roads, bridges, 
+or tunnels that connect your home (the end-user device) to the nearest 
+highway (the main network). Depending on where you live 
+(your location) and what’s available, you might use different types 
+of roads:
+
+- Fiber-optic cable: Like a high-speed expressway directly 
+from your home to the highway, allowing very fast travel.
+- DSL (Digital Subscriber Line): Similar to a regular road 
+with moderate speed limits, good for shorter distances.
+- Cable modem: Like a wide, multi-lane road shared with others 
+  in your neighborhood, offering decent speed but sometimes slowing 
+  down if too many cars are on it.
+- Wi-Fi: Comparable to a personal bridge connecting your house to 
+  the main road, with flexibility in where you place it, 
+  but sometimes with weaker structural integrity.
+
+Example:
+
+Consider the following quantitative comparison between different 
+access technologies:
+
+- Fiber-optic: Can provide speeds up to **1 Gbps (1000 Mbps)**. 
+ This means you could download a 2-hour HD movie (~5 GB) in 
+ approximately **40 seconds**.
+  
+- **DSL:** Typically offers speeds of **10-20 Mbps**. 
+  The same 2-hour HD movie would take around **33-50 minutes** to 
+  download.
+
+- **Cable modem:** Usually provides speeds of **100-300 Mbps**. 
+  Downloading the movie would take about **2-5 minutes**.
+
+- **Wi-Fi (depending on the standard and distance):
+  Could range from 54 Mbps (for older standards like 802.11g) 
+  to 600 Mbps (for 802.11ac). The download time for the movie could 
+  vary from **1.5 minutes** to **12 minutes**.
+
+In summary, access technology is the method through which your device 
+connects to the broader network, with different technologies offering 
+varying speeds, reliability, and performance, much like different 
+types of roads connect your home to a highway.
+
+Here are 4 access technologies, classified according to their typical 
+use case:
+
+1. Fiber to the Home (FTTH)
+   - Classification: Home Access
+   - Description: A high-speed broadband connection using fiber-optic 
+    cables that run directly to individual homes. 
+	It offers very high bandwidth and is often used for residential 
+	internet service.
+
+2. Ethernet (Gigabit Ethernet)
+   - Classification: Enterprise Access
+   - Description: A wired network technology commonly used within 
+    businesses and office environments to connect computers and 
+	other devices to a local area network (LAN). 
+	It provides reliable, high-speed connections typically ranging 
+	from 1 Gbps to 10 Gbps.
+
+3. 4G LTE
+   - Classification: Wide-Area Wireless Access
+   - Description: A wireless broadband technology used for mobile 
+   internet access, allowing users to connect to the internet over 
+   a wide area. 
+   It's commonly used by smartphones and other mobile devices to 
+   provide internet access on the go.
+
+4. Wi-Fi (802.11ac)
+   - Classification: Home Access / Enterprise Access
+   - Description: A wireless networking technology commonly 
+   used in both homes and enterprises to provide wireless internet 
+   access within a localized area, such as a home, office, 
+   or public space. 
+   Wi-Fi networks are often connected to a broadband modem or a 
+   corporate network.
+
