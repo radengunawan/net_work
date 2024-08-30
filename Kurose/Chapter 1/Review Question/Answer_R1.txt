@@ -1,0 +1,148 @@
+In computer networking, the terms host 
+and end system are often used interchangeably, 
+but they can have slightly different connotations 
+depending on the context. 
+
+Host
+A host is any device that can send or receive data 
+over a network. This includes computers, servers, 
+smartphones, IoT devices, etc. 
+Essentially, if a device has an IP address and can 
+communicate over a network, it's considered a host.
+
+Analogy: Imagine a large postal system. A host would
+ be any addressable location within this system, 
+ like a house, a business, or a post office. 
+ Each of these locations can send or receive mail 
+ (data).
+
+Example: In a small office network, there might be 
+10 computers (hosts), each with its own IP address, 
+capable of communicating with each other or with 
+external servers.
+
+End System
+An end system is a specific type of host that is 
+on the "edge" of the network and is the origin or 
+destination of data. 
+End systems typically include user-facing devices like 
+personal computers, smartphones, or servers that provide 
+services directly to users.
+
+Analogy: Continuing with the postal system
+ analogy, an end system would be the final 
+ destination or the starting point of mail. 
+ For example, a personal home address where someone sends 
+ or receives letters (data). 
+ The end system is where the mail (data) actually 
+ originates or where it is ultimately 
+ delivered.
+
+Example: Consider a web browsing scenario:
+- Your laptop (an end system) sends a request to a web 
+server (another end system).
+- The web server processes the request and sends the 
+data back to your laptop.
+- Both your laptop and the web server are end systems 
+because they are the endpoints in this communication 
+process.
+
+ Key Differences
+- Host is a broader term that includes any device 
+with network capabilities.
+- End system specifically refers to a host 
+that is either the origin or destination of data on 
+the network.
+
+Example in a Network
+Let's say there is a company network:
+- Hosts: The network includes 50 desktop computers, 
+             10 printers, 5 servers, and a few IoT devices 
+             like smart thermostats.
+			 
+- End Systems: Out of these, the desktop computers 
+					and servers are considered end systems 
+					because they are where data is either 
+					generated (e.g., a user sending 
+					an email) or received (e.g., 
+					a web server delivering a webpage). 
+					The printers and IoT devices, while 
+					they are hosts, are not typically 
+					considered end systems in the context 
+					of user data flow.
+
+Summary:
+While all end systems are hosts, 
+not all hosts are end systems. 
+The term "end system" is used to emphasize the 
+role of a device as the final source or 
+destination of network data, while "host" is a 
+more general term encompassing all 
+network-capable devices.
+
+So, a web server is indeed an "end system" in the context 
+of computer networking.
+
+Explanation:
+A web server serves as both the origin and the destination 
+of data in a network communication process. 
+When you request a webpage from a web server 
+(e.g., by typing a URL in your browser), the server 
+receives your request, processes it, and sends back 
+the data (the webpage) to your device. 
+
+Why is it an End System?
+- Origin of Data: The web server is the source of 
+the webpage data that it sends to the client's 
+device (like your computer or smartphone).
+- Destination of Data: The web server is also 
+the destination for requests from clients 
+when they ask for a webpage.
+
+Example:
+If you visit a website, such as `www.example.com`, your 
+device (an end system) sends a request to the web server 
+hosting that website (another end system). 
+The web server processes this request and sends the
+ webpage data back to your device. 
+ Here, both your device and the web server are 
+ end systems because they are the endpoints 
+ of the communication process.
+
+
+A host that is not an end system could be a network router
+ or a network switch. 
+
+Example: Network Router
+
+A router is a device that forwards data packets between 
+computer networks, directing the data to its destination. 
+While a router has an IP address and is a host on the network, 
+it is not considered an end system because it doesn't generate or 
+consume data as part of typical user communication. 
+Instead, it facilitates the transfer of data between end systems.
+
+Analogy:
+Imagine a mail sorting facility in a postal system. 
+The facility itself doesn't generate or receive personal mail
+ (like a home would), but it plays a critical role in directing mail
+ to its final destination. 
+ In this analogy, the sorting facility is like a router, 
+ and the homes are the end systems.
+
+ Example:
+- In a home network, your router has an IP address and is 
+responsible for routing traffic between your devices 
+(like your computer, smartphone) and the internet.
+- While your computer and smartphone are end systems because 
+they generate or receive data (e.g., browsing the web, sending emails), 
+the router is not an end system. 
+It merely routes the data between your end systems and 
+the web servers you're communicating with.
+
+Summary:
+The router is a host because it has an IP address and is capable 
+of handling network traffic, but it is not an end system because 
+it does not serve as the origin or final destination of user data 
+in typical network communication. 
+Instead, it facilitates the communication between end systems.
