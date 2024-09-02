@@ -1,0 +1,28 @@
+R6: skipped
+
+R7
+Transmission Rate of Ethernet LANs:
+   - Ethernet LANs can have various transmission 
+   rates depending on the Ethernet standard being used. 
+   Common transmission rates include:
+     - 10 Mbps (Megabits per second) for the 
+		original Ethernet (10BASE-T).
+     - 100 Mbps for Fast Ethernet (100BASE-T).
+     - 1 Gbps (Gigabit per second) for Gigabit Ethernet (1000BASE-T).
+     - 10 Gbps for 10 Gigabit Ethernet (10GBASE-T).
+     - 40 Gbps and 100 Gbps for more advanced Ethernet 
+		standards like 40GBASE-T and 100GBASE-T.
+
+R8: Physical Media that Ethernet Can Run Over:
+   - Ethernet can run over various types of physical media, including:
+     - Twisted Pair Copper Cables (e.g., 
+		Cat5e, Cat6, Cat6a, Cat7, and Cat8 cables).
+     - Fiber Optic Cables (e.g., single-mode 
+		fiber and multi-mode fiber).
+     - Coaxial Cable (primarily used in early Ethernet 
+		standards such as 10BASE2 and 10BASE5).
+     - Wireless Media (used in wireless Ethernet, 
+	 such as Wi-Fi, though it's technically not "Ethernet" in 
+	 the traditional wired sense).
+
+These rates and media types are used to define the capabilities and infrastructure of Ethernet LANs in various networking environments.
